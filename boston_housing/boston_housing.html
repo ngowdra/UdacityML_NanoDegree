@@ -12391,6 +12391,18 @@ When the model is trained with maximum depth = 1 then model suffers from high bi
 <p>Overfitting:
 When the model is trained with maximum depth = 10 then model suffers from high variance. The model will be overfitting.
 Since training score is high whereas validation score is low</p>
+<p>What visual cues in the graph justify your conclusions:
+Underfitting:
+The training curve and testing curve converge at high points.</p>
+<p>Since we are using score and not error, we need to inverse this logic.</p>
+<p>So the curve that converges at low point for training and testing data is underfitting.</p>
+<p>This is because the model has oversimplified the problem and hence even when supplying more data points the training and testing score never increase.</p>
+<p>Overfitting:
+The training curve has low error and testing sit has high error.</p>
+<p>Since we are using score and not error, we need to inverse this logic.</p>
+<p>So the curve that has high training score and low testing score is overfitting.</p>
+<p>Meaning the model is not learning from the data but trying to fit the training model perfectly.</p>
+<p>This fails when we test with testing data and hence the low testing score.</p>
 
 </div>
 </div>
