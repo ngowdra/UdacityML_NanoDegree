@@ -13049,9 +13049,9 @@ In the code block below, you will need to implement the following:</p>
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
 
 <span class="c1"># TODO: Initialize the three models</span>
-<span class="n">clf_A</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
-<span class="n">clf_B</span> <span class="o">=</span> <span class="n">AdaBoostClassifier</span><span class="p">()</span>
-<span class="n">clf_C</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">clf_A</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">clf_B</span> <span class="o">=</span> <span class="n">AdaBoostClassifier</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">clf_C</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
 
 <span class="c1"># TODO: Calculate the number of samples for 1%, 10%, and 100% of the training data</span>
 <span class="c1"># HINT: samples_100 is the entire training set i.e. len(y_train)</span>
@@ -17612,6 +17612,8 @@ The model training time is very high.</p>
 <p><strong>Answer: </strong> 
 Explain to CharityML:
     CharityML is a Model that is tasked with predicting if a person will makes more than $50,000(y)(as they are more likely to donate to the charity) given various features such as age,sex, education etc(X).</p>
+<p>What is a weak learner?:
+    A weak learner is a child model used for classification, Hence adaboost(parent model) is a combination of 'n' child models.Each child model is tasked with classifying the data, once the classification is done, the model output is observed. We increased the weights of the misclassified data points so that the next child model will try to increase the weights by correctly classifying the misclassified data points.</p>
 <p>How the final model chosen is supposed to work:
     The final model chosen is ADA Boost(due to the reasons explained in the previous question), Weak learners will classify the features into salary less than $50,000 and salary equal to or more than $50,000, the weak learners are iterated so that misclassified data points are punished by increasing there weights so the next learner will try to increase the weights of correct classification.
 Various weak learners will be combined by using the sum of log(correct weights/incorrect weights). The Final model will have 2 parts, 1 with positive weight scores and 1 with negative weight scores. This seperation forms the decision boundry we need to classify the charityML data.</p>
