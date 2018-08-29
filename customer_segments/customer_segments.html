@@ -13925,10 +13925,12 @@ Once you have performed this implementation, the dataset will be stored in the v
 <p><strong>Answer:</strong>
 First principal component accounts for 49.93 % of the variance and second principle component accounts for 22.59% so total variance is 72.52 %.</p>
 <p>Third and fourth components accounts for 10.4% and 9.7% of variance so the first four components accounts for 92.62% of variance.</p>
-<p>1st dimension explains the +ve variance relationship between Milk,grocery and detergents_paper ( which we have already determined before), it also explains the -ve variance for fresh and frozen.
-This confirms that customers who buy Milk also tend to buy grocery and detergents_paper or vice versa.</p>
-<p>2nd dimension looks to be an orthogonal dimension to the 1st principle component and hence the features for fresh,frozen and delicatessen have +ve Variance and variance for Milk,grocery and detergents_paper are less.</p>
-<p>3rd dimension looks to be an orthogonal dimension to the 1st and 2nd principle components and hence the features Milk,frozen and delicatessen have +ve variance where as fresh and detergents_paper have -ve variance.</p>
+<p>1st dimension explains the +ve variance relationship between Milk,grocery and detergents_paper ( which we have already determined before), This means this customer segment is more likely to buy milk,grocery and detergents_paper. Looking at the items itseems like this is a supermarket.</p>
+<p>2nd dimension looks to be an orthogonal dimension to the 1st principle component and hence the features for fresh,frozen and delicatessen have +ve Variance and variance for Milk,grocery and detergents_paper are less. This means fresh , frozen and delicatessen are more likely to be bought by this customer segment. Looking the items I would say this would be a cafe since it has ordered fresh and delicatessen items in large amounts.</p>
+<p>Using 1st and 2nd dimensions we have already accounted for 73% of the variance,hence 3rd and 4th dimensions are of less relative importance.</p>
+<p>3rd dimension looks to be an orthogonal dimension to the 1st and 2nd principle components and hence the features Milk,frozen and delicatessen have +ve variance where as fresh and detergents_paper have -ve variance. Looking at the items I would say this could be a hotel/cafe of some sort, since delicatessen are ordered in large amounts.</p>
+<p>4th dimension looks to be an orthogonal dimension to the 1st,2nd and 3rd principle components, Here frozen items have a -ve variance where as fresh and delicatessen have a high +ve variance. This indicates that this customer segement does not serve anything that is frozen and serves freshly made products.</p>
+<p>This customer segement could be a high end restaurant.</p>
 
 </div>
 </div>
@@ -14880,8 +14882,19 @@ Sample point 2 predicted to be in Cluster 1
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Change in delivery service from 5 days to 3 days will affect customers of cluster 0 more than cluster 1. Since Freshness of goods needs fast delivery to keep the goods fresh. Since Fresh product category customers are located on cluster 0, this will have a negatively.</p>
+<p>Hypothesis:
+Change in delivery service from 5 days to 3 days will affect customers of cluster 0 more than cluster 1. Since Freshness of goods needs fast delivery to keep the goods fresh. Since Fresh product category customers are located on cluster 0, this will have a negatively.</p>
 <p>Where as customers located on cluster 1 tend to order more Grocery,Milk and detergents_paper products, decreasing the delivery service from 5 days to 3 days will not affect them too much, if some of the cost savings of reduced delivery is passed onto them, then they will be positively affected.</p>
+<p>A/B test:</p>
+<p>total customers: 398 control group</p>
+<p>To get statistically significance we need a p value of 0.05 i.e 5% , so i'll use this as a starting point</p>
+<p>subset test group: 20</p>
+<p>Here i'll take 15 customers from cluster 0 (cafes) and 5 customers from cluster 1 (Supermarkets). Since I believe it'll have positive effect on customers clustered in 1 i'll take less. I want reduce the -ve effect of this change. So taking more customers that will have -ve effect into the experiment is better.</p>
+<p>Experiment analysis:</p>
+<p>Out of 15 customers i'll note down the effect in re-orders , do they go up or down.</p>
+<p>My expectation: they will go down ( Cafes)</p>
+<p>Out of 5 customers i'll mention a discount has been applied since I am passing some of my delivery service savings to them.</p>
+<p>My expectation: they will go up ( supermarkets)</p>
 
 </div>
 </div>
